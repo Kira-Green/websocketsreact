@@ -11,7 +11,7 @@ const AppHook = props => {
 
 	useEffect(() => {
 		socket.on("chat message", msg => {
-			setMessages([...messages, msg], []);
+			setMessages([...messages, msg]);
 		});
 	});
 
@@ -33,12 +33,7 @@ const AppHook = props => {
 				))}
 
 				<form onSubmit={handleSubmit} action="">
-					<input
-						value={input}
-						// id="m"
-						// autocomplete="off"
-						onChange={handleChange}
-					/>
+					<input value={input} onChange={handleChange} />
 					<button>Send</button>
 				</form>
 			</ul>
